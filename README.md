@@ -1,4 +1,4 @@
-#Week 1 AI Quiz Generator
+# Week 1 AI Quiz Generator
 
 A simple AI-powered quiz generator built with JAC (Jaseci AI Context) language that creates multiple-choice questions on any topic using Google's Gemini AI.
 
