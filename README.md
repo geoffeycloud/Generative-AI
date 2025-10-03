@@ -16,39 +16,10 @@ A simple AI-powered quiz generator built with JAC (Jaseci AI Context) language t
 - JAC environment (version 0.8.7 or higher)
 - Valid Google Gemini API key
 
-## Setup
-
-1. **Get a Gemini API Key**
-   - Visit [Google AI Studio](https://aistudio.google.com/)
-   - Create an account and generate an API key
-
-2. **Update the API Key**
-   - Edit the `.env` file
-   - Replace `your_api_key_here` with your actual Gemini API key:
-   ```
-   GEMINI_API_KEY=your_actual_api_key_here
-   ```
-
-3. **Install Dependencies**
-   ```bash
-   # Activate JAC environment and install byllm
-   source ~/activate_jac.sh
-   pip install byllm
-   ```
-
-## How to Run
-
-From VS Code terminal (Windows), use this command:
-
-```bash
-wsl bash -c "source ~/activate_jac.sh && cd /mnt/c/Users/HP/GenAI-week-1/quiz_ai_project && export GEMINI_API_KEY='your_api_key_here' && jac run quiz_generator.jac"
-```
-
-**Note:** Replace `your_api_key_here` with your actual API key.
 
 ## Usage
 
-1. Run the program using the command above
+1. Run the program 
 2. Enter a topic when prompted (e.g., "Python programming", "World History", etc.)
 3. The AI will generate a quiz with multiple-choice questions
 4. Type `exit` to quit the program
@@ -71,15 +42,6 @@ Generated Quiz:
 ...
 ```
 
-## File Structure
-
-```
-quiz_ai_project/
-├── quiz_generator.jac    # Main JAC program
-├── .env                  # Environment variables (API key)
-└── README.md            # This file
-```
-
 ## Technical Details
 
 - **Language:** JAC (Jaseci AI Context)
@@ -87,17 +49,4 @@ quiz_ai_project/
 - **Dependencies:** byllm, litellm
 - **Environment:** WSL/Linux
 
-## Troubleshooting
 
-**API Key Invalid Error:**
-- Ensure your API key is correct and active
-- Make sure the environment variable is properly exported
-- Check that there are no extra spaces in the `.env` file
-
-**Module Not Found Error:**
-- Ensure `byllm` is installed: `pip install byllm`
-- Activate the JAC environment before running: `source ~/activate_jac.sh`
-
-## License
-
-This project is for educational purposes.
