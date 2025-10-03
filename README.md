@@ -1,4 +1,4 @@
-# AI Quiz Generator
+# Week 1 AI Quiz Generator
 
 A simple AI-powered quiz generator built with JAC (Jaseci AI Context) language that creates multiple-choice questions on any topic using Google's Gemini AI.
 
@@ -52,7 +52,7 @@ The program will automatically load your API key from the `.env` file.
 
 ## Usage
 
-1. Run the program using the command above
+1. Run the program 
 2. Enter a topic when prompted (e.g., "Python programming", "World History", etc.)
 3. The AI will generate a quiz with multiple-choice questions
 4. Type `exit` to quit the program
@@ -112,6 +112,4 @@ quiz_ai_project/
 - Ensure `byllm` is installed: `pip install byllm`
 - Activate the JAC environment before running: `source ~/activate_jac.sh`
 
-## License
 
-This project is for educational purposes.
