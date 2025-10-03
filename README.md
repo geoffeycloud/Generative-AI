@@ -22,12 +22,16 @@ A simple AI-powered quiz generator built with JAC (Jaseci AI Context) language t
    - Visit [Google AI Studio](https://aistudio.google.com/)
    - Create an account and generate an API key
 
-2. **Update the API Key**
-   - Edit the `.env` file
-   - Replace `your_api_key_here` with your actual Gemini API key:
-   ```
-   GEMINI_API_KEY=your_actual_api_key_here
-   ```
+2. **Set up Environment Variables**
+   - Copy the example environment file:
+     ```bash
+     cp .env.example .env
+     ```
+   - Edit the `.env` file and replace `your_google_gemini_api_key_here` with your actual Gemini API key:
+     ```
+     GEMINI_API_KEY=your_actual_api_key_here
+     ```
+   - **Important:** Never commit your `.env` file to version control!
 
 3. **Install Dependencies**
    ```bash
@@ -41,10 +45,10 @@ A simple AI-powered quiz generator built with JAC (Jaseci AI Context) language t
 From VS Code terminal (Windows), use this command:
 
 ```bash
-wsl bash -c "source ~/activate_jac.sh && cd /mnt/c/Users/HP/GenAI-week-1/quiz_ai_project && export GEMINI_API_KEY='your_api_key_here' && jac run quiz_generator.jac"
+wsl bash -c "source ~/activate_jac.sh && cd /mnt/c/Users/HP/GenAI-week-1/quiz_ai_project && jac run quiz_generator.jac"
 ```
 
-**Note:** Replace `your_api_key_here` with your actual API key.
+The program will automatically load your API key from the `.env` file.
 
 ## Usage
 
@@ -76,9 +80,19 @@ Generated Quiz:
 ```
 quiz_ai_project/
 ├── quiz_generator.jac    # Main JAC program
-├── .env                  # Environment variables (API key)
+├── .env                  # Environment variables (API key) - NOT in version control
+├── .env.example          # Template for environment variables
+├── .gitignore           # Git ignore file
 └── README.md            # This file
 ```
+
+## Security Notes
+
+⚠️ **Important Security Reminders:**
+- Never commit your `.env` file to version control
+- Keep your API keys private and secure
+- Use the `.env.example` file as a template for required environment variables
+- The `.gitignore` file ensures sensitive files are not accidentally committed
 
 ## Technical Details
 
