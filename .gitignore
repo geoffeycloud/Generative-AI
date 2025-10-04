@@ -4,6 +4,9 @@
 .env.production
 .env.staging
 
+# Pre-commit
+.pre-commit-cache/
+
 # Python
 __pycache__/
 *.py[cod]

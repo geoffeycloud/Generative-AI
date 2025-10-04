@@ -21,10 +21,25 @@ A simple AI-powered quiz generator built with JAC (Jaseci AI Context) language t
 1. **Get a Gemini API Key**
    - Visit [Google AI Studio](https://aistudio.google.com/)
    - Create an account and generate an API key
+   - ⚠️ **Keep your API key secure and never commit it to version control**
 
 2. **Set up Environment Variables**
-  
+   ```bash
+   # Copy the example environment file
+   cp .env.example .env
+   
+   # Edit .env and add your actual API key
+   # The .env file is already in .gitignore and won't be committed
+   ```
+   
 3. **Install Dependencies**
+   
+4. **(Optional) Install Pre-commit Hooks for Security**
+   ```bash
+   # Install pre-commit to prevent accidental secret commits
+   pip install pre-commit
+   pre-commit install
+   ```
    
 
 
@@ -69,6 +84,17 @@ quiz_ai_project/
 - **AI Model:** Gemini 2.0 Flash
 - **Dependencies:** byllm, litellm
 - **Environment:** WSL/Linux
+
+## Security
+
+This project handles sensitive API keys. Please follow these security best practices:
+
+- **Never commit your `.env` file** - It contains your API key and is in `.gitignore`
+- **Never share your API key** - Keep it private and secure
+- **Rotate compromised keys immediately** - If you accidentally expose your key, revoke it at [Google AI Studio](https://aistudio.google.com/app/apikey)
+- **Use pre-commit hooks** - Install the provided pre-commit configuration to prevent accidental commits of secrets
+
+For more details, see [SECURITY.md](SECURITY.md)
 
 ## Troubleshooting
 
