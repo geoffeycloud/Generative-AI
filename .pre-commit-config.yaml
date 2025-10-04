@@ -1,0 +1,38 @@
+# Pre-commit Hook Configuration
+# This file helps prevent committing sensitive data
+#
+# To install pre-commit hooks:
+# 1. Install pre-commit: pip install pre-commit
+# 2. Install the hooks: pre-commit install
+# 3. (Optional) Run on all files: pre-commit run --all-files
+
+repos:
+  # Check for accidentally committed secrets
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-added-large-files
+        args: ['--maxkb=1000']
+      - id: check-yaml
+      - id: check-json
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: detect-private-key
+        name: Detect private keys
+      - id: check-case-conflict
+        name: Check for case conflicts in filenames
+
+  # Detect secrets using gitleaks
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.18.2
+    hooks:
+      - id: gitleaks
+        name: Detect hardcoded secrets
+
+  # Additional secret detection
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.4.0
+    hooks:
+      - id: detect-secrets
+        args: ['--baseline', '.secrets.baseline']
+        exclude: package.lock.json
